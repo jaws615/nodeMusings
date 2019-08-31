@@ -1,17 +1,11 @@
 var request = require("request");
 
 var options = { method: 'POST',
-  url: 'https://api.twilio.com/2010-04-01/Accounts/XXXXXX/Messages.json',
+  url: 'https://api.twilio.com/2010-04-01/Accounts/' + process.env.ACCOUNTSMS + '/Messages.json',
   headers: 
    { 'cache-control': 'no-cache',
      Connection: 'keep-alive',
-     'Content-Length': '67',
-     'Accept-Encoding': 'gzip, deflate',
-     Host: 'api.twilio.com',
-     'Cache-Control': 'no-cache',
-     Accept: '*/*',
-     'User-Agent': 'PostmanRuntime/7.16.3',
-     Authorization: 'Basic QUMzYWQ4MDJhNmJmOWVjYjM5Mzk5YTE0YzJjNzkwOTNlZjozM2I4ZDk4YjYwMzQ0NTZlNGEwOTU1YTM4YTJhNjkzMA==',
+     Authorization: 'Basic ' + process.env.TOKEN,
      'Content-Type': 'application/x-www-form-urlencoded' },
   form: 
    { To: '+17176209092',
